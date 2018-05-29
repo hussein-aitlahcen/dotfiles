@@ -6,13 +6,13 @@
 
 stdenv.mkDerivation rec {
   name = "emacs-${version}${versionModifier}";
-  version = "26.0";
-  versionModifier = ".91";
+  version = "26.1";
+  versionModifier = ".50";
 
   src = fetchgit {
     url = https://git.savannah.gnu.org/git/emacs.git;
-    rev = "8d4500087f547e203cfba03f61dcbe641bf650de";
-    sha256 = "1zk9xm01v4chnxf9ns9c3kx2jal3lj88hadv5vp0zb8xr9vz4f31";
+    rev = "038063651ec0d16300095b9056282ffb1535c03a";
+    sha256 = "1d973jxlvqvwmgjl8pnyd9cv82ywhjkag9f11x5cfgfvk3rnlfzc";
   };
 
   nativeBuildInputs = [
