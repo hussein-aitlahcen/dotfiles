@@ -1,25 +1,18 @@
-{ stdenv, callPackage, nodegit }:
+{ stdenv, fetchurl, glibc, nodegit }:
 
 let
   version = "0.9.3";
-
-  nodegit = callPackage ../nodegit { };
-
   libs = [ stdenv.cc.cc glibc ];
-
 in
-
   stdenv.mkDerivation {
     name = "clever-cli-${version}";
 
-    buildInputs = [ nodegit nodejs-6_x ];
+    buildInputs = [ nodegit ];
 
     src = fetchurl {
       url = "https://clever-tools.cellar.services.clever-cloud.com/releases/${version}/clever-tools-${version}_linux.tar.gz";
       sha256 = "adcae5af912dcbdc74d996b6e94767f24d16bf1bdcd5073797f999fe75b018a4";
     };
-
-    buildPhase = ":";
 
     libPath = stdenv.lib.makeLibraryPath libs;
 
@@ -42,5 +35,4 @@ in
         --set-interpreter "$(cat $NIX_CC/nix-support/dynamic-linker)" \
         "$bin"
     '';
-
   }
