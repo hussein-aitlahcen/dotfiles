@@ -1,8 +1,8 @@
 { stdenv, fetchgit, autoreconfHook, pkgconfig, texinfo, gnutls
-, gtk3, withGTK3 ? null, libXaw, libXext, libXpm, libjpeg, libpng, libtiff
+, gtk3, libXaw, libXext, libXpm, libjpeg, libpng, libtiff
 , libungif, libxml2 , ncurses, gettext, acl, gpm, dbus
 , libselinux, Xaw3d, alsaLib, imagemagick, libXft, librsvg
-, xlibsWrapper, automake }:
+, xlibsWrapper, automake, ... }:
 
 stdenv.mkDerivation rec {
   name = "emacs-${version}${versionModifier}";
