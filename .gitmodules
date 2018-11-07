@@ -4,3 +4,6 @@
 [submodule ".emacs.d"]
 	path = .emacs.d
 	url = https://github.com/syl20bnr/spacemacs.git
+[submodule ".config/nixpkgs/overlays/nixpkgs-stackage"]
+	path = .config/nixpkgs/overlays/nixpkgs-stackage
+	url = https://github.com/haitlahcen/nixpkgs-stackage
