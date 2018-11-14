@@ -1,1 +1,0 @@
-nixpkgs-stackage/default.nix
