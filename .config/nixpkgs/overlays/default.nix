@@ -1,5 +1,7 @@
 self: super:
 {
   # custom emacs
-  emacs26 = super.callPackage ./pkgs/emacs {};
+  emacs = super.emacs.overrideAttrs (old: {
+    version = "27.1";
+  })
 }
