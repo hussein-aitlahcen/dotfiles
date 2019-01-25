@@ -4,6 +4,7 @@ self: super:
     name = "emacs-${version}${versionModifier}";
     version = "27.1";
     versionModifier = "";
+    buildInputs = old.buildInputs ++ [ super.autoconf ];
     patches = [
       ./emacs.patch
     ];
